@@ -1,0 +1,12 @@
+<h1>Notes</h1>
+
+<% for file in @notes.keys %>
+  <div class="annotated_file">
+    <p><%= file %></p>
+    <ul>
+      <% for annotation in @notes[file] %>
+        <li><%= annotation %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

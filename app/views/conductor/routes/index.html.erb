@@ -1,0 +1,19 @@
+<h1>Routes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Requirements</th>
+  </tr>
+
+  <% @routes.each do |route| %>
+    <tr>
+      <td><%= route[:name] %></td>
+      <td><%= route[:verb] %></td>
+      <td><%= route[:segs] %></td>
+      <td><%= route[:reqs] %></td>
+    </tr>
+  <% end %>
+</table>

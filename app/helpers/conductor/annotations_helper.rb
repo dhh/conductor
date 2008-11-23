@@ -1,0 +1,2 @@
+module Conductor::AnnotationsHelper
+end
