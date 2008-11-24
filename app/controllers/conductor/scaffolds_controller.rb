@@ -16,6 +16,8 @@ class Conductor::ScaffoldsController < Conductor::BaseController
     def generator_arguments
       returning [ "scaffold" ] do |args|
         args << params[:scaffold][:name]
+        args << "--skip-timestamps" if params[:scaffold][:skip_timestamps] == "1"
+        args << "--skip-migration" if params[:scaffold][:skip_migration] == "1"
         args << params[:scaffold][:fields].select { |f| f[:name].blank? }.collect { |f| "#{f[:name]}:#{f[:type]}" }
       end.flatten
     end

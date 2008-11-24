@@ -6,9 +6,11 @@
     <%= form.text_field :name %>
   </p>
 
+  <h1>Fields</h1>
+
   <table>
     <tr>
-      <th>Field</th>
+      <th>Name</th>
       <th>Type</th>
     </tr>
     
@@ -19,6 +21,14 @@
       </tr>
     <% end %>
   </table>
+
+
+  <h1>Options</h1>
+  
+  <p>
+    <%= form.check_box :skip_timestamps %> Skip timestamps<br />
+    <%= form.check_box :skip_migration %> Skip migration
+  </p>
   
   <p>
     <%= form.submit "Create scaffold" %>
