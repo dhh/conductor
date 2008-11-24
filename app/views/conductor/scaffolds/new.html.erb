@@ -1,5 +1,26 @@
 <h1>New scaffold</h1>
 
 <% form_for(:scaffold, :url => conductor_scaffolds_path) do |form| %>
-  <%= form.text_field :name %>
+  <p>
+    <%= form.label :name, "Name <small>(singular, ex: Post, Person, Product)</small>" %><br />
+    <%= form.text_field :name %>
+  </p>
+
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+    </tr>
+    
+    <% 5.times do |i| %>
+      <tr>
+        <td><%= text_field_tag "scaffold[fields][#{i}][name]" %></td>
+        <td><%= select_tag "scaffold[fields][#{i}][type]", options_for_select(%w( string text integer datetime )) %></td>
+      </tr>
+    <% end %>
+  </table>
+  
+  <p>
+    <%= form.submit "Create scaffold" %>
+  </p>
 <% end %>
