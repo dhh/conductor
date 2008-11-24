@@ -13,7 +13,7 @@ class Conductor::ScaffoldsController < Conductor::BaseController
   
   private
     def generator_arguments
-      returning [] do |args|
+      returning [ "scaffold" ] do |args|
         args << params[:scaffold][:name]
         args << params[:scaffold][:fields].select { |f| f[:name].blank? }.collect { |f| "#{f[:name]}:#{f[:type]}" }
       end.flatten

@@ -14,8 +14,8 @@
     
     <% 5.times do |i| %>
       <tr>
-        <td><%= text_field_tag "scaffold[fields][#{i}][name]" %></td>
-        <td><%= select_tag "scaffold[fields][#{i}][type]", options_for_select(%w( string text integer datetime )) %></td>
+        <td><%= text_field_tag "scaffold[fields][][name]" %></td>
+        <td><%= select_tag "scaffold[fields][][type]", options_for_select(%w( string text integer datetime )) %></td>
       </tr>
     <% end %>
   </table>
