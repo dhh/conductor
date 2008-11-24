@@ -6,6 +6,7 @@ class Conductor::ScaffoldsController < Conductor::BaseController
   end
   
   def create
+    # TODO: Change to use the proper ScaffoldGenerator instead of this CLI hack job
     Rails::Generator::Scripts::Generate.new.run(generator_arguments)
     redirect_to(new_conductor_scaffold_url)
   end
