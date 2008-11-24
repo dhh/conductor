@@ -8,14 +8,14 @@ task :pluginize => [ :environment, "pluginize:clobber" ] do
   cp_r 'app/views/conductor', 'pkg/conductor/views/conductor'
   
   FileList['app/helpers/conductor/*'].each do |helper|
-    cp_r helper, "pkg/conductor/lib/conductor/#{File.basename(helper)}"
+    cp helper, "pkg/conductor/lib/conductor/#{File.basename(helper)}"
   end
 
   FileList['lib/pluginization/*'].each do |mechanic|
-    cp_r mechanic, "pkg/conductor/#{File.basename(mechanic)}"
+    cp mechanic, "pkg/conductor/#{File.basename(mechanic)}"
   end
 
-  cp_r 'public/stylesheets/conductor.css', 'pkg/conductor/public/conductor.css'
+  cp 'public/stylesheets/conductor.css', 'pkg/conductor/public/conductor.css'
 end
 
 namespace :pluginize do
