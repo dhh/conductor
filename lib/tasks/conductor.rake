@@ -1,7 +1,8 @@
-desc 'Turn conductor into a plugin.'
 namespace :conductor do
-  task :install => :environment do
-    # cp 'public/stylesheets/conductor.css', 'pkg/conductor/public/conductor.css'
-    puts "hello"
+  namespace :install do
+    desc 'Copy assets from plugin to application.'
+    task :assets => :environment do
+      cp Conductor::Engine.root.join('public/stylesheets/conductor.css'), Rails.root.join('public/stylesheets/conductor.css')
+    end
   end
 end
