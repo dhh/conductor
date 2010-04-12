@@ -8,7 +8,7 @@
 
 <% form_for(:scaffold, :url => conductor_scaffolds_path) do |form| %>
   <p>
-    <%= form.label :name, "Name <small>(singular, ex: Post, Person, Product)</small>" %><br />
+    <%= form.label :name, "Name <small>(singular, ex: Post, Person, Product)</small>".html_safe %><br />
     <%= form.text_field :name %>
   </p>
 
