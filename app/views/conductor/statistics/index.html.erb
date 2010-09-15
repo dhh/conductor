@@ -1,0 +1,46 @@
+<h1>Statistics</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Lines</th>
+    <th>LOC</th>
+    <th>Classes</th>
+    <th>Methods</th>
+    <th>M/C</th>
+    <th>LOC/M</th>
+  </tr>
+  <% @stats.lines.each do |line| %>
+    <tr class="statistic">
+      <th><%= line[:name] %></th>
+      <td><%= line[:lines] %></td>
+      <td><%= line[:codelines] %></td>
+      <td><%= line[:classes] %></td>
+      <td><%= line[:methods] %></td>
+      <td><%= line[:m_over_c] %></td>
+      <td><%= line[:loc_over_m] %></td>
+    </tr>
+  <% end %>
+
+  <%
+    if @stats.pairs.length > 1
+    line = @stats.total_line
+  %>
+    <tr class="statistic">
+      <th><%= line[:name] %></th>
+      <td><%= line[:lines] %></td>
+      <td><%= line[:codelines] %></td>
+      <td><%= line[:classes] %></td>
+      <td><%= line[:methods] %></td>
+      <td><%= line[:m_over_c] %></td>
+      <td><%= line[:loc_over_m] %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+<table>
+<tr class="statistic"><th>Code LOC</th><td><%= @stats.code_loc %></td></tr>
+<tr class="statistic"><th>Test LOC</th><td><%= @stats.tests_loc %></td></tr>
+<tr class="statistic"><th>Code to Test Ratio</th><td>1:<%= @stats.code_to_test %></td></tr>
+</table>

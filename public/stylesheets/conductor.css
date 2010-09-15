@@ -101,3 +101,15 @@ a:hover {
 #sidebar ul.links li {
   margin-bottom: 5px;
 }
+
+tr.statistic th {
+  text-align: left;
+}
+
+tr.statistic th {
+  text-align: left;
+}
+
+tr.statistic td {
+  text-align: right;
+}
