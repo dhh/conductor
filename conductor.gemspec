@@ -10,6 +10,11 @@ Gem::Specification.new do |s|
   s.email   = 'david@loudthinking.com'
   s.summary = 'Web UI for Rails development'
 
-  s.files = Dir["#{File.dirname(__FILE__)}/**/*"]
-  s.require_paths = %w(lib app/models app/controllers app/helpers)
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.test_files = Dir["test/**/*"]
+
+  s.add_dependency "rails", "~> 4.0.0"
+  s.add_dependency "jquery-rails"
+
+  s.add_development_dependency "sqlite3"
 end
