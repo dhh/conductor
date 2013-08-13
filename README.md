@@ -24,6 +24,6 @@ Conductor can now be accessed at /conductor when you're running off local host.
 
 ## License
 
-Copyright &copy;
+Copyright &copy; David Heinemeier Hansson
 
 Released under the [MIT License](http://www.opensource.org/licenses/MIT)
