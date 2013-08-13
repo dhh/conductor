@@ -4,7 +4,7 @@ Conductor is a Rails engine that lets you do through a web UI what you'd normall
 
 ## Installation & Setup
 
-To install add the following line to the Gemfile in your Rails 3 application :
+To install add the following line to the Gemfile in your Rails  application :
 
 ```
 gem 'conductor', :git => 'https://github.com/NewRosies/conductor.git', :require => 'conductor/engine'
