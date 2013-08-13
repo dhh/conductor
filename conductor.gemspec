@@ -1,6 +1,11 @@
+$:.push File.expand_path("../lib", __FILE__)
+
+# Maintain your gem's version:
+require "conductor/version"
+
 Gem::Specification.new do |s|
   s.name    = 'conductor'
-  s.version = '1.0.0'
+  s.version = Conductor::VERSION
   s.author  = 'David Heinemeier Hansson'
   s.email   = 'david@loudthinking.com'
   s.summary = 'Web UI for Rails development'
