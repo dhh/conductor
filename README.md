@@ -6,11 +6,11 @@ Conductor is a Rails engine that lets you do through a web UI what you'd normall
 
 To install add the following line to the Gemfile in your Rails  application :
 
+```ruby
+group :development do
+  gem 'conductor', :github => 'NewRosies/conductor'
+end
 ```
-gem 'conductor', :git => 'https://github.com/NewRosies/conductor.git', :require => 'conductor/engine'
-```
-
-Then run the conductor:install:assets rake command.
 
 Conductor can now be accessed at /conductor when you're running off local host.
 
