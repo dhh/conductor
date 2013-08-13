@@ -6,7 +6,7 @@
   starting point for your RESTful, resource-oriented application.
 </p>
 
-<% form_for(:scaffold, :url => conductor_scaffolds_path) do |form| %>
+<%= form_for(:scaffold, :url => conductor_scaffolds_path) do |form| %>
   <p>
     <%= form.label :name, "Name <small>(singular, ex: Post, Person, Product)</small>".html_safe %><br />
     <%= form.text_field :name %>
@@ -19,7 +19,7 @@
       <th>Name</th>
       <th>Type</th>
     </tr>
-    
+
     <% 5.times do |i| %>
       <tr>
         <td><%= text_field_tag "scaffold[fields][][name]" %></td>
@@ -30,12 +30,12 @@
 
 
   <h1>Options</h1>
-  
+
   <p>
     <%= form.check_box :skip_timestamps %> Skip timestamps<br />
     <%= form.check_box :skip_migration %> Skip migration
   </p>
-  
+
   <p>
     <%= form.submit "Create scaffold" %>
   </p>
