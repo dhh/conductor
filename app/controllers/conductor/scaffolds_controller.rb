@@ -6,8 +6,9 @@ module Conductor
     end
 
     def create
+      Rails.logger.info params[:scaffold]
       # TODO: Change to use the proper ScaffoldGenerator instead of this CLI hack job
-      Rails::Generators.invoke("scaffold", generator_arguments, :behavior => :invoke, :destination_root => Rails.root)
+      #Rails::Generators.invoke("scaffold", generator_arguments, :behavior => :invoke, :destination_root => Rails.root)
       redirect_to(new_conductor_scaffold_url)
     end
 
