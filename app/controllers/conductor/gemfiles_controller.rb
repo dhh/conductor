@@ -7,7 +7,12 @@ module Conductor
       @gemfile = Gemfile.instance
     end
 
-    def update
+    def create
+      @gemfile = Gemfile.instance
+      @gemfile.content = params[:gemfile][:content]
+      Rails.logger.info @gemfile.save
+
+      redirect_to gemfile_path
     end
   end
 end

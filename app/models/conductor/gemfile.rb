@@ -10,13 +10,12 @@ module Conductor
       @content = File.open(GEMFILE_PATH).read
     end
 
-    def content=(content)
-      @content = content unless content.blank?
+    def content=(new_content)
+      @content = new_content unless new_content.blank?
     end
 
     def save
-      output = content
-      !!File.open(GEMFILE_PATH, 'w') { |file| file.write(output) }
+      !!File.open(GEMFILE_PATH, 'w') { |file| file.write(@content) }
     end
 
     def to_s
