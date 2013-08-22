@@ -10,5 +10,7 @@
   </p>
 <% end %>
 
-<%= javascript_include_tag "conductor/editor" %>
-<%= javascript_include_tag "conductor/gemfiles" %>
+<%= content_for :scripts do %>
+  <%= javascript_include_tag "conductor/editor" %>
+  <%= javascript_include_tag "conductor/gemfiles" %>
+<% end %>
