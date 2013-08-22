@@ -113,3 +113,9 @@ tr.statistic th {
 tr.statistic td {
   text-align: right;
 }
+
+#editor {
+  position: :absolute;
+  width: 500px;
+  height: 400px;  
+}

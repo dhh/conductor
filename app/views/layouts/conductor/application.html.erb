@@ -37,7 +37,7 @@
             <li>Database</li>
             <li>Fixtures</li>
             <li>Plugins</li>
-            <li>Gems</li>
+            <li><%= link_to("Gems", gemfile_index_path) %></li>
             <li>Rails</li>
           </ul>
         </li>
@@ -85,5 +85,7 @@
     
     <div id="footer">&nbsp;</div>
   </div>
+  <%= javascript_include_tag "conductor/ace/ace" %>
+  <%= javascript_include_tag "conductor/gemfile" %>
 </body>
 </html>

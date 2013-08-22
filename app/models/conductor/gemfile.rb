@@ -7,7 +7,7 @@ module Conductor
     GEMFILE_PATH = File.join(Rails.root, 'Gemfile')
 
     def content
-      @content ||= File.open(GEMFILE_PATH).read
+      @content = File.open(GEMFILE_PATH).read
     end
 
     def content=(content)
