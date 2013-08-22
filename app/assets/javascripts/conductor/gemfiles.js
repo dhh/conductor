@@ -6,7 +6,7 @@ $(document).ready(function(){
   var textarea = $('#gemfile_content');
   textarea.hide();
 
-  editor.setTheme("ace/theme/github");
+  editor.setTheme("ace/theme/textmate");
   editor.getSession().setMode("ace/mode/ruby");
   editor.getSession().setValue(textarea.val());
   editor.getSession().on('change', function(){
