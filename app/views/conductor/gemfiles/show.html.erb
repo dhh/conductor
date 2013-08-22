@@ -1,5 +1,5 @@
 <h1>Manage Gemfile</h3>
-<%= form_for(:gemfile, url: gemfile_path) do |f| %>
+<%= form_for(:gemfile, url: gemfile_path, method: :patch) do |f| %>
   <p>
     <div id="editor"></div>
     <%= f.text_area :content %>
