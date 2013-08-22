@@ -6,6 +6,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <title>Rails: <%= @page_title %></title>
   <%= stylesheet_link_tag "conductor" %>
+  <%= javascript_include_tag "conductor" %>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
             <li>Test</li>
           </ul>
         </li>
-        
+
         <li>
           <h3>Generators</h3>
           <ul class="links">
@@ -37,11 +38,11 @@
             <li>Database</li>
             <li>Fixtures</li>
             <li>Plugins</li>
-            <li><%= link_to("Gems", gemfile_index_path) %></li>
+            <li><%= link_to("Gems", gemfile_path) %></li>
             <li>Rails</li>
           </ul>
         </li>
-        
+
         <li>
           <h3>Reflection</h3>
           <ul class="links">
@@ -82,10 +83,7 @@
         <%= yield %>
       </div>
     </div>
-    
     <div id="footer">&nbsp;</div>
   </div>
-  <%= javascript_include_tag "conductor/ace/ace" %>
-  <%= javascript_include_tag "conductor/gemfile" %>
 </body>
 </html>
