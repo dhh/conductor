@@ -1,3 +1,5 @@
+require "jquery/rails/engine"
+
 module Conductor
   class Engine < Rails::Engine
     isolate_namespace Conductor
