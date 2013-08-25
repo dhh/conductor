@@ -4,8 +4,8 @@ module Conductor
   class Engine < Rails::Engine
     isolate_namespace Conductor
 
-    initializer 'ace.asset_pipeline' do |app|
-      app.config.assets.precompile += ['conductor/gemfile.js', 'conductor/editor.js']
+    initializer 'asset_pipeline' do |app|
+      app.config.assets.precompile += ['conductor.js', 'conductor.css', 'conductor/gemfile.js', 'conductor/editor.js']
     end
 
     config.after_initialize do |app|
