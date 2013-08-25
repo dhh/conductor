@@ -6,6 +6,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <title>Rails: <%= @page_title %></title>
   <%= stylesheet_link_tag "conductor" %>
+  <%= javascript_include_tag "conductor" %>
 </head>
 
 <body>
@@ -19,11 +20,11 @@
             <li>Test</li>
           </ul>
         </li>
-        
+
         <li>
           <h3>Generators</h3>
           <ul class="links">
-            <li><%= link_to("Scaffold", new_conductor_scaffold_path) %></li>
+            <li><%= link_to("Scaffold", new_scaffold_path) %></li>
             <li>Resource</li>
             <li>Model</li>
             <li>Controller</li>
@@ -37,17 +38,17 @@
             <li>Database</li>
             <li>Fixtures</li>
             <li>Plugins</li>
-            <li>Gems</li>
+            <li><%= link_to("Gems", gemfile_path) %></li>
             <li>Rails</li>
           </ul>
         </li>
-        
+
         <li>
           <h3>Reflection</h3>
           <ul class="links">
-            <li><%= link_to("Routes", conductor_routes_path) %></li>
-            <li><%= link_to("Annotations", conductor_annotations_path) %></li>
-            <li><%= link_to("Statistics", conductor_statistics_path) %></li>
+            <li><%= link_to("Routes", routes_path) %></li>
++            <li><%= link_to("Annotations", annotations_path) %></li>
++            <li><%= link_to("Statistics", statistics_path) %></li>
           </ul>
         </li>
 
@@ -82,8 +83,8 @@
         <%= yield %>
       </div>
     </div>
-    
     <div id="footer">&nbsp;</div>
+    <%= yield :scripts %>
   </div>
 </body>
 </html>
