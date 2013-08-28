@@ -1,12 +1,11 @@
-<h1>New scaffold</h1>
+<h1>New resource</h1>
 
 <p>
-  Scaffolds an entire resource, from model and migration to controller and
-  views, along with a full test suite. The resource is ready to use as a
-  starting point for your RESTful, resource-oriented application.
+  Stubs out a new resource including an empty model and controller suitable
+  for a restful, resource-oriented application. 
 </p>
 
-<%= form_for(:scaffold, :url => scaffolds_path) do |form| %>
+<%= form_for(:resource, :url => resources_path) do |form| %>
   <p>
     <%= form.label :name, "Name <small>(singular, ex: Post, Person, Product)</small>".html_safe %><br />
     <%= form.text_field :name %>
@@ -22,8 +21,8 @@
 
     <% 5.times do |i| %>
       <tr>
-        <td><%= text_field_tag "scaffold[fields][][name]" %></td>
-        <td><%= select_tag "scaffold[fields][][type]", options_for_select(Conductor::BaseGeneratorForm::DATA_TYPES) %></td>
+        <td><%= text_field_tag "resource[fields][][name]" %></td>
+        <td><%= select_tag "resource[fields][][type]", options_for_select(Conductor::BaseGeneratorForm::DATA_TYPES) %></td>
       </tr>
     <% end %>
   </table>
@@ -32,18 +31,18 @@
   <h1>Options</h1>
 
   <p>
+    
+  </p>
+
     <%= form.check_box :skip_namespace %> Skip namespace<br />
-    <%= form.check_box :skip_stylesheets %> Skip stylesheets<br />
-    <%= form.check_box :skip_assets %> Skip assets<br />
     <%= form.check_box :skip_indexes %> Skip indexes<br />
     <%= form.check_box :skip_fixture %> Skip fixture<br />
     <%= form.check_box :skip_helper %> Skip helper<br />
-    <%= form.check_box :skip_jbuilder %> Skip jbuilder<br />
+    <%= form.check_box :skip_assets %> Skip assets<br />
     <%= form.check_box :skip_timestamps %> Skip timestamps<br />
     <%= form.check_box :skip_migration %> Skip migration
-  </p>
 
   <p>
-    <%= form.submit "Create scaffold" %>
+    <%= form.submit "Create resource" %>
   </p>
 <% end %>

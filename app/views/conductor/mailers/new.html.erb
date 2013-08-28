@@ -1,0 +1,34 @@
+<h1>New mailer</h1>
+
+<p>
+  Stubs out a new mailer and its views.
+</p>
+
+<%= form_for(:mailer, :url => mailers_path) do |form| %>
+  <p>
+    <%= form.label :name, "Name <small>(singular, ex: Post, Person, Product)</small>".html_safe %><br />
+    <%= form.text_field :name %>
+  </p>
+
+  <h1>Methods</h1>
+
+  <table>
+
+    <% 5.times do |i| %>
+      <tr>
+        <td><%= text_field_tag "mailer[fields][][name]" %></td>
+      </tr>
+    <% end %>
+  </table>
+
+
+  <h1>Options</h1>
+
+  <p>
+    <%= form.check_box :skip_namespace %> Skip namespace<br />
+  </p>
+
+  <p>
+    <%= form.submit "Create mailer" %>
+  </p>
+<% end %>

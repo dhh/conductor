@@ -1,20 +1,20 @@
 require 'rails/generators'
 
 module Conductor
-  class ScaffoldsController < ApplicationController
+  class ResourcesController < ApplicationController
     def new
     end
 
     def create
-      @form = ScaffoldGeneratorForm.new(params[:scaffold])
+      @form = ResourceGeneratorForm.new(params[:resource])
 
       if @form.valid?
         Rails.logger.info @form.command_line
         @form.run
       end
 
-      redirect_to(new_scaffold_url)
+      redirect_to(new_resource_url)
     end
-
+    
   end
 end

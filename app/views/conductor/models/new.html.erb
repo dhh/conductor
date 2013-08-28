@@ -1,0 +1,43 @@
+<h1>New model</h1>
+
+<p>
+  Stubs out a new model.
+</p>
+
+<%= form_for(:model, :url => models_path) do |form| %>
+  <p>
+    <%= form.label :name, "Name <small>(singular, ex: Post, Person, Product)</small>".html_safe %><br />
+    <%= form.text_field :name %>
+  </p>
+
+  <h1>Fields</h1>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+    </tr>
+
+    <% 5.times do |i| %>
+      <tr>
+        <td><%= text_field_tag "model[fields][][name]" %></td>
+        <td><%= select_tag "model[fields][][type]", options_for_select(Conductor::BaseGeneratorForm::DATA_TYPES) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+
+  <h1>Options</h1>
+
+  <p>
+    <%= form.check_box :skip_namespace %> Skip namespace<br />
+    <%= form.check_box :skip_indexes %> Skip indexes<br />
+    <%= form.check_box :skip_fixture %> Skip fixture<br />
+    <%= form.check_box :skip_timestamps %> Skip timestamps<br />
+    <%= form.check_box :skip_migration %> Skip migration
+  </p>
+
+  <p>
+    <%= form.submit "Create model" %>
+  </p>
+<% end %>
