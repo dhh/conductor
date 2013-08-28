@@ -1,5 +1,4 @@
-Rails.application.routes.draw do
-  namespace :conductor do
-    resources :scaffolds, :routes, :annotations, :statistics
-  end
+Conductor::Engine.routes.draw do
+  resources :scaffolds, :routes, :annotations, :statistics, :fixtures
+  resource :gemfile, :database
 end
