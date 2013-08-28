@@ -5,7 +5,7 @@ module Conductor
   class BaseGeneratorForm
     include ActiveModel::Model
 
-    DATA_TYPES = %w(string text integer datetime)
+    DATA_TYPES = %w(string text integer decimal float time timestamp date datetime binary boolean primary_key references)
 
     class_attribute :generator_class
     attr_accessor :name, :fields, :options
@@ -29,9 +29,9 @@ module Conductor
     end
 
     def run
-      capture(:stdout) do
+      # capture(:stdout) do
         self.generator_class.start(normalize_args, destination_root: Rails.root)
-      end
+      # end
     end
 
     def command_line
