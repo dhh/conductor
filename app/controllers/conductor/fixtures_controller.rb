@@ -4,7 +4,7 @@ module Conductor
   class FixturesController < ApplicationController
 
   	def index
-      @files= Fixture.files
+      @fixtures= Fixture.files
     end
   end
 end
