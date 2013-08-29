@@ -9,5 +9,6 @@ module Conductor
     def show
       @fixture = Conductor::Fixture.new(params[:path])
     end
+
   end
 end
