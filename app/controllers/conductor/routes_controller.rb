@@ -1,14 +1,12 @@
+require 'action_dispatch/routing/inspector'
+
+
 module Conductor
   class RoutesController < ApplicationController
+  	prepend_view_path ActionDispatch::DebugExceptions::RESCUES_TEMPLATE_PATH
+    
     def index
-      @routes = Rails.application.routes.routes.collect do |route|
-        name = Rails.application.routes.named_routes.routes.index(route).to_s
-        verb = route.verb.to_s
-        path = route.path
-        reqs = route.requirements.empty? ? "" : route.requirements.inspect
-
-        { :name => name, :verb => verb, :path => path, :reqs => reqs }
-      end
+    	@routes_inspector = ActionDispatch::Routing::RoutesInspector.new(_routes.routes)   	
     end
   end
 end
