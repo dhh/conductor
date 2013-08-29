@@ -1,20 +1,21 @@
 require 'rails/generators'
 
 module Conductor
-  class ScaffoldsController < ApplicationController
+  class MailersController < ApplicationController
     def new
+
     end
 
     def create
-      @form = ScaffoldGeneratorForm.new(params[:scaffold])
+      @form = MailerGeneratorForm.new(params[:mailer])
 
       if @form.valid?
         Rails.logger.info @form.command_line
         @form.run
       end
 
-      redirect_to(new_scaffold_url)
+      redirect_to(new_mailer_url)
     end
-
+    
   end
 end
