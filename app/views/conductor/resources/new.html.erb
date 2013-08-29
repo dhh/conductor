@@ -13,20 +13,21 @@
 
   <h1>Fields</h1>
 
-  <table>
+  <table id="fieldsTable">
     <tr>
       <th>Name</th>
       <th>Type</th>
     </tr>
 
     <% 5.times do |i| %>
-      <tr>
+      <tr class="field">
         <td><%= text_field_tag "resource[fields][][name]" %></td>
         <td><%= select_tag "resource[fields][][type]", options_for_select(Conductor::BaseGeneratorForm::DATA_TYPES) %></td>
       </tr>
     <% end %>
   </table>
 
+  <a href="#" id="addField">Add a new field</a>
 
   <h1>Options</h1>
 
@@ -45,4 +46,8 @@
   <p>
     <%= form.submit "Create resource" %>
   </p>
+<% end %>
+
+<%= content_for :scripts do %>
+  <%= javascript_include_tag "conductor/generators" %>
 <% end %>

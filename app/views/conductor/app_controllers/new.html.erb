@@ -12,14 +12,16 @@
 
   <h1>Actions</h1>
 
-  <table>
+  <table id="fieldsTable">
 
     <% 5.times do |i| %>
-      <tr>
+      <tr class="field">
         <td><%= text_field_tag "app_controller[fields][][name]" %></td>
       </tr>
     <% end %>
   </table>
+
+  <a href="#" id="addField">Add a new action</a>
 
 
   <h1>Options</h1>
@@ -32,4 +34,8 @@
   <p>
     <%= form.submit "Create controller" %>
   </p>
+<% end %>
+
+<%= content_for :scripts do %>
+  <%= javascript_include_tag "conductor/generators" %>
 <% end %>

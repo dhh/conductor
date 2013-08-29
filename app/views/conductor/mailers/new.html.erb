@@ -12,15 +12,16 @@
 
   <h1>Methods</h1>
 
-  <table>
+  <table id="fieldsTable">
 
     <% 5.times do |i| %>
-      <tr>
+      <tr class="field">
         <td><%= text_field_tag "mailer[fields][][name]" %></td>
       </tr>
     <% end %>
   </table>
 
+  <a href="#" id="addField">Add a new method</a>
 
   <h1>Options</h1>
 
@@ -31,4 +32,8 @@
   <p>
     <%= form.submit "Create mailer" %>
   </p>
+<% end %>
+
+<%= content_for :scripts do %>
+  <%= javascript_include_tag "conductor/generators" %>
 <% end %>
