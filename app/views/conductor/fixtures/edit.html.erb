@@ -1,0 +1,16 @@
+<h1>Manage Fixture</h3>
+	<%= form_for(:fixture, url: fixture_path(@fixture.path), method: :patch) do |f| %>
+  <p>
+    <div id="editor"></div>
+    <%= f.text_area :content %>
+  </p>
+
+  <p>
+    <%= f.submit "Save Fixture" %>
+  </p>
+<% end %>
+
+<%= content_for :scripts do %>
+  <%= javascript_include_tag "conductor/editor" %>
+  <%= javascript_include_tag "conductor/fixtures" %>
+<% end %>

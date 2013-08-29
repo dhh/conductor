@@ -6,8 +6,16 @@ module Conductor
       @fixtures = Conductor::Fixture.all
     end
 
-    def show
+    def edit
       @fixture = Conductor::Fixture.new(params[:path])
+      
+    end
+
+     def update
+      @fixture = Conductor::Fixture.new(params[:path])
+      @fixture.content = params[:fixture][:content]
+      @fixture.save
+      redirect_to fixtures_path
     end
 
   end

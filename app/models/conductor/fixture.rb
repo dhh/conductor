@@ -3,10 +3,27 @@ module Conductor
     FIXTURES_PATH = Rails.root.join("test", "fixtures")
 
     def initialize(path)
-      @content = File.open(FIXTURES_PATH.join(path)).read
+      @path = path
     end
+    
     def content
-      @content
+      @content ||= File.open(FIXTURES_PATH.join(@path)).read
+    end
+ 
+    def content=(new_content)
+      @content = new_content unless new_content.blank?
+    end
+
+    def path
+      @path
+    end
+ 
+    def save
+       puts "*"*100
+       puts @path
+       puts @content
+
+      !!File.open(FIXTURES_PATH.join(@path), 'w') { |file| file.write(@content) }
     end
     
     def self.all
