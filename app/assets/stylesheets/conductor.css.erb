@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  background-color: #f0f0f0;
+  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  font-size: 13px;
+  color: #333;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+a  {color: #03c}
+a:hover {
+  background-color: #03c;
+  color: white;
+  text-decoration: none;
+}
+
+
+#page {
+  background-color: #f0f0f0;
+  width: 750px;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#content {
+  float: left;
+  background-color: white;
+  border: 3px solid #aaa;
+  border-top: none;
+  padding: 25px;
+  width: 500px;
+}
+
+#sidebar {
+  float: right;
+  width: 175px;
+}
+
+#footer {
+  clear: both;
+}
+
+
+#header, #about, #getting-started {
+  padding-left: 75px;
+  padding-right: 30px;
+}
+
+
+#header {
+  background-image: url(<%= asset_path("rails.png") %>);
+  background-repeat: no-repeat;
+  background-position: top left;
+  height: 64px;
+}
+#header h1, #header h2 {margin: 0}
+#header h2 {
+  color: #888;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+
+#meat {
+  border-top: 1px solid #ccc;
+  margin-top: 25px;
+  padding-top: 15px;
+}
+#meat h1 {
+  margin: 0;
+  font-size: 20px;
+}
+#meat h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+#sidebar ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+#sidebar ul h3 {
+  margin-top: 25px;
+  font-size: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+#sidebar li {
+  list-style-type: none;
+}
+#sidebar ul.links li {
+  margin-bottom: 5px;
+}
+
+tr.statistic th {
+  text-align: left;
+}
+
+tr.statistic th {
+  text-align: left;
+}
+
+tr.statistic td {
+  text-align: right;
+}
+
+#editor {
+  position: :absolute;
+  width: 500px;
+  height: 400px;  
+}
+
+#getting-started {
+  /*border-top: 1px solid #ccc;
+  margin-top: 25px;*/
+  padding-top: 15px;
+}
+#getting-started h1 {
+  margin: 0;
+  font-size: 20px;
+}
+#getting-started h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 25px;
+}
+#getting-started ol {
+  margin-left: 0;
+  padding-left: 0;
+}
+#getting-started li {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 25px;
+}
+#getting-started li h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  color: #333;
+}
+#getting-started li p {
+  color: #555;
+  font-size: 13px;
+}
+

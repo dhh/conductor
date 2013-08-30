@@ -1,19 +1,7 @@
 <h1>Routes</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Verb</th>
-    <th>Path</th>
-    <th>Requirements</th>
-  </tr>
+<p> 
+  Routes match in priority from top to bottom
+</p>
 
-  <% @routes.each do |route| %>
-    <tr>
-      <td><%= route[:name] %></td>
-      <td><%= route[:verb] %></td>
-      <td><%= route[:path] %></td>
-      <td><%= route[:reqs] %></td>
-    </tr>
-  <% end %>
-</table>
+<%= @routes_inspector.format(ActionDispatch::Routing::HtmlTableFormatter.new(self)) %>
